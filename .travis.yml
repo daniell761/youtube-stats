@@ -1,0 +1,9 @@
+language: node_js
+services:
+ - docker
+
+before install:
+  -  docker build -t daniell761/reactapp -f Dockerfile.dev .
+
+scripts:
+  - docker run daniell761/reactapp npm run test -- --coverage
